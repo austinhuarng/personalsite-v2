@@ -43,7 +43,7 @@ const Portfolio = () => {
               <div className="relative border-l-2 border-gray-300 pl-4">
                 {prev_experiences.map((exp, index) => (
                   <div key={index} className="mb-8 relative">
-                    <div className="absolute -left-6 mt-1 w-4 h-4 rounded-full bg-gray-300"></div>
+                    <div className="absolute -left-6 mt-5 w-4 h-4 rounded-full bg-gray-300"></div>
                     <div className="flex items-center mb-2">
                       <img src={exp.logo} alt={`${exp.company} logo`} className="mr-4 w-12 h-12 rounded-md" />
                       <div>
