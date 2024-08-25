@@ -67,11 +67,11 @@ const Portfolio = () => {
             </a>
           </div>
           <div className="flex space-x-4">
-            <a href="/projects" className="text-gray-500 hover:text-black hover:underline">
+            <a href="/#/projects" className="text-gray-500 hover:text-black hover:underline">
               /projects
             </a>
             <span className="mx-4">|</span>
-            <a href="/resume" className="text-gray-500 hover:text-black hover:underline">
+            <a href="/#/resume" className="text-gray-500 hover:text-black hover:underline">
               /resume
             </a>
           </div>
