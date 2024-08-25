@@ -5,7 +5,7 @@ import GradientBackground from './GradientBackground';
 
 const Portfolio = () => {
   const prev_experiences = [
-    { company: 'Capital One', role: 'Software Engineer Intern, ', logo: require('../logos/capital_one_logo.jpeg'), date: 'Summer 2021' },
+    { company: 'Capital One', role: 'Software Engineer Intern', logo: require('../logos/capital_one_logo.jpeg'), date: 'Summer 2021' },
     { company: 'WeMo Scooter', role: 'Software Engineer Intern', logo: require('../logos/wemo_scooter_logo.jpeg'), date: 'Summer 2020' },
     { company: 'Microsoft', role: 'Software Engineer Intern', logo: require('../logos/microsoft_logo.jpeg'), date: 'Summer 2019' },
   ];
