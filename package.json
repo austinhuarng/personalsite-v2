@@ -16,7 +16,7 @@
   "homepage": "https://austinyhuang.com",
   "scripts": {
     "start": "react-scripts start",
-    "add-domain": "echo austinyhuang.com > build/CNAME",
+    "add-domain": "echo \"austinyhuang.com\" > build/CNAME",
     "predeploy": "npm run add-domain && npm run build",
     "deploy": "gh-pages -d build",
     "build": "react-scripts build",
