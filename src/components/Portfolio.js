@@ -1,13 +1,13 @@
-import React, { useState, useEffect } from 'react';
+import React from 'react';
 import { Home, User, Briefcase, FileText, Mail, Menu, X, Linkedin, Github } from 'lucide-react';
 import Navbar from './Navbar';
 import GradientBackground from './GradientBackground';
 
 const Portfolio = () => {
   const prev_experiences = [
-    { company: 'Microsoft', role: 'Software Engineer Intern', logo: require('../logos/microsoft_logo.jpeg') },
-    { company: 'WeMo Scooter', role: 'Software Engineer Intern', logo: require('../logos/wemo_scooter_logo.jpeg') },
-    { company: 'Capital One', role: 'Software Engineer Intern', logo: require('../logos/capital_one_logo.jpeg') },
+    { company: 'Capital One', role: 'Software Engineer Intern, ', logo: require('../logos/capital_one_logo.jpeg'), date: 'Summer 2021' },
+    { company: 'WeMo Scooter', role: 'Software Engineer Intern', logo: require('../logos/wemo_scooter_logo.jpeg'), date: 'Summer 2020' },
+    { company: 'Microsoft', role: 'Software Engineer Intern', logo: require('../logos/microsoft_logo.jpeg'), date: 'Summer 2019' },
   ];
 
   return (
@@ -15,7 +15,7 @@ const Portfolio = () => {
       <Navbar />
       <main className="max-w-7xl mx-auto py-6 px-4 sm:px-6 lg:px-8">
         <div className="space-y-6">
-          <h1 className="text-4xl sm:text-5xl font-bold text-gray-900">
+          <h1 className="text-4xl sm:text-5xl text-gray-900">
             Hey, I'm Austin Huang
           </h1>
           <p className="text-xl sm:text-2xl text-gray-700">
@@ -27,10 +27,10 @@ const Portfolio = () => {
                 Current Role
               </h2>
               <div className="flex flex-col sm:flex-row items-start sm:items-center mb-6">
-                <img src={require('../logos/amazon_logo.jpeg')} alt="Amazon Alexa logo" className="mb-2 sm:mb-0 sm:mr-4 rounded-full" />
+                <img src={require('../logos/amazon_logo.jpeg')} alt="Amazon Alexa logo" className="mb-2 sm:mb-0 sm:mr-4 rounded-full w-16 h-16" />
                 <div>
-                  <h3 className="text-xl font-semibold text-gray-900">Software Development Engineer II</h3>
-                  <p className="text-lg text-gray-600">Amazon, Alexa Mobile</p>
+                  <h3 className="text-xl font-semibold text-gray-900">Amazon</h3>
+                  <p className="text-lg text-gray-600">Software Development Engineer II, Alexa Mobile Performance Engineering</p>
                 </div>
               </div>
               <p className="text-gray-700 mb-6">
@@ -40,15 +40,35 @@ const Portfolio = () => {
               <h2 className="text-2xl sm:text-3xl font-bold text-gray-900 mb-4">
                 Previous Experience
               </h2>
-              {prev_experiences.map((exp, index) => (
-                <div key={index} className="flex items-center mb-4">
-                  <img src={exp.logo} alt={`${exp.company} logo`} className="mr-4 w-12 h-12 rounded-full" />
-                  <div>
-                    <h3 className="text-lg sm:text-xl font-semibold text-gray-900">{exp.role}</h3>
-                    <p className="text-base sm:text-lg text-gray-600">{exp.company}</p>
+              <div className="relative border-l-2 border-gray-300 pl-4">
+                {prev_experiences.map((exp, index) => (
+                  <div key={index} className="mb-8 relative">
+                    <div className="absolute -left-6 mt-1 w-4 h-4 rounded-full bg-gray-300"></div>
+                    <div className="flex items-center mb-2">
+                      <img src={exp.logo} alt={`${exp.company} logo`} className="mr-4 w-12 h-12 rounded-md" />
+                      <div>
+                        <h3 className="text-lg sm:text-xl font-semibold text-gray-900">{exp.company}</h3>
+                        <p className="text-base sm:text-lg text-gray-600">{exp.role}</p>
+                      </div>
+                    </div>
+                    <p className="text-sm text-gray-500">{exp.date}</p>
                   </div>
+                ))}
+              </div>
+            </div>
+          </div>
+          <div className="bg-white bg-opacity-90 shadow-lg rounded-lg overflow-hidden">
+            <div className="px-4 py-6 sm:p-8">
+              <h2 className="text-2xl sm:text-3xl font-bold text-gray-900 mb-4">
+                Education
+              </h2>
+              <div className="flex items-center">
+                <img src={require('../logos/usc_logo.jpeg')} alt="USC logo" className="mr-4 w-16 h-16 rounded-full" />
+                <div>
+                  <h3 className="text-xl font-semibold text-gray-900">University of Southern California</h3>
+                  <p className="text-lg text-gray-600">B.S. in Computer Science and Business Administration</p>
                 </div>
-              ))}
+              </div>
             </div>
           </div>
         </div>
