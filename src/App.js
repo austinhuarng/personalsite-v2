@@ -5,12 +5,10 @@ import Projects from './components/Projects';
 
 function App() {
   return (
-    <Router>
-      <Routes>
-        <Route exact path="/" element={<Portfolio />} />
-        <Route path="/projects" element={<Projects />} />
-      </Routes>
-    </Router>
+    <Routes>
+      <Route exact path="/" element={<Portfolio />} />
+      <Route path="/projects" element={<Projects />} />
+    </Routes>
   );
 }
 
