@@ -1,46 +1,77 @@
 import React from 'react';
 import Navbar from './Navbar';
 import GradientBackground from './GradientBackground';
+import TrojanCheckInOut from '../images/Trojan_checkin.jpeg';
+import Accessio from '../images/accessio.jpeg';
+import PwC from '../images/pwc_logo.png';
+import Boeing from '../images/boeing_logo.png';
 
-const ProjectCard = ({ title, description, technologies, link }) => {
-    return (
-        <div className="relative overflow-hidden rounded-2xl shadow-lg transition-all duration-300 group cursor-pointer h-64 md:h-40 transform hover:scale-105 hover:shadow-xl">
-            <div className="bg-white dark:bg-gray-800 p-6 h-full transition-all duration-300 group-hover:opacity-30 rounded-2xl">
-                <h3 className="text-xl font-semibold mb-2 text-gray-900 dark:text-gray-100">{title}</h3>
-                <p className="text-gray-600 dark:text-gray-400">{technologies.join(', ')}</p>
+const ProjectCard = ({ title, description, technologies, link, image }) => {
+    const content = (
+        <div 
+            className="relative overflow-hidden rounded-2xl shadow-lg transition-all duration-300 group cursor-pointer h-64 md:h-40 transform hover:scale-105 hover:shadow-xl"
+        >
+            <div 
+                className="absolute inset-0 bg-cover bg-center"
+                style={{ backgroundImage: `url(${image})` }}
+            />
+            <div className="absolute inset-0 bg-black bg-opacity-50" />
+            
+            <div className="relative bg-transparent p-6 h-full transition-all duration-300 group-hover:opacity-30">
+                <h3 className="text-xl font-semibold mb-2 text-white">{title}</h3>
+                <p className="text-gray-200">{technologies.join(', ')}</p>
             </div>
             <div className="absolute inset-0 bg-black bg-opacity-70 flex items-center justify-center opacity-0 transition-opacity duration-300 group-hover:opacity-100 rounded-2xl">
-                <div className="text-white p-6">
+                <div className="text-white p-6 flex flex-col items-center justify-center">
                     <p className="mb-4">{description}</p>
-                    <a href={link} className="text-blue-400 hover:underline" target="_blank" rel="noopener noreferrer">Learn More</a>
+                    {link && (
+                        <a href={link} className="text-blue-400 hover:underline" target="_blank" rel="noopener noreferrer">Learn More</a>
+                    )}
                 </div>
             </div>
             <div className="absolute inset-0 transition-all duration-300 group-hover:translate-x-2 group-hover:-translate-y-2"></div>
         </div>
+    );
+
+    return link ? (
+        <a href={link} target="_blank" rel="noopener noreferrer" className="block">
+            {content}
+        </a>
+    ) : (
+        content
     );
 };
 
 const Projects = ({ isDarkMode }) => {
     const projects = [
         {
-            title: "Project 1",
-            description: ".........",
-            technologies: ["React", "Node.js", "MongoDB"],
-            link: "#"
+            title: "Access.io",
+            description: "Web application that gathers user-reported accessibility features of locations, generating an “accessibility score”",
+            technologies: ["Java", "JSP", "MySQL"],
+            link: "https://github.com/camshannon/CSCI201_Group_6/",
+            image: Accessio
         },
         {
-            title: "Project 2",
-            description: "............",
-            technologies: ["React", "Node.js", "MongoDB"],
-            link: "#"
+            title: "Trojan Check In/Out",
+            description: "An Android app for students to check in/out of buildings via QR code and managers to track building capacities",
+            technologies: ["Java", "Firebase", "zxing (QR code library)"],
+            link: "https://github.com/michelleran/TrojanCheckInOut",
+            image: TrojanCheckInOut
         },
         {
-            title: "Project 3",
-            description: "...........",
-            technologies: ["React", "Node.js", "MongoDB"],
-            link: "#"
+            title: "Boeing Design Challenge",
+            description: "Placed 1st out of 20 teams in designing/setting parameters for a space vehicle on an asteroid capture return mission.",
+            technologies: ["Placed 1st in the Boeing Design Challenge at USC"],
+            link: "",
+            image: Boeing
         },
-        // Add more projects as needed
+        {
+            title: "PwC Case Competition",
+            description: "Provided advisory services to an online consumer marketplace company looking to relocate.",
+            technologies: ["Placed 2nd in the PwC Case Competition at USC"],
+            link: process.env.PUBLIC_URL + '/assets/PwC_Challenge.pdf',
+            image: PwC
+        },
     ];
 
     return (
