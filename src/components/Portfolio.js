@@ -91,7 +91,12 @@ const Portfolio = ({ isDarkMode }) => {
               /projects
             </a>
             <span className="mx-4">|</span>
-            <a href="/#/resume" className="text-gray-500 hover:text-black hover:underline">
+            <a 
+              href={process.env.PUBLIC_URL + '/assets/AustinHuang_Resume.pdf'} 
+              target="_blank" 
+              rel="noopener noreferrer" 
+              className="text-gray-500 dark:text-gray-300 hover:text-black dark:hover:text-white hover:underline"
+            >
               /resume
             </a>
           </div>
