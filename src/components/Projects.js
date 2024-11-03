@@ -79,7 +79,6 @@ const Projects = ({ isDarkMode }) => {
           <Navbar />
           <div className="py-12 px-4 sm:px-6 lg:px-8">
             <div className="max-w-7xl mx-auto">
-              <h1 className="text-4xl font-bold text-gray-900 dark:text-gray-100 mb-8">My Projects</h1>
               <div className="grid grid-cols-1 gap-6">
                 {projects.map((project, index) => (
                   <ProjectCard key={index} {...project} />
