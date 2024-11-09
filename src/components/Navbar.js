@@ -2,7 +2,7 @@ import React from 'react';
 
 const Navbar = () => {
     return (
-        <nav className="bg-transparent shadow-md py-4 px-10">
+        <nav className="bg-transparent py-4 px-10">
             <div className="flex justify-between">
                 <h1 className="text-xl">
                     <a href="/" className="text-black-500 dark:text-white hover:text-gray-700 dark:hover:text-gray-300">Austin Huang</a>
