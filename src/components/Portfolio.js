@@ -76,18 +76,21 @@ const Portfolio = ({ isDarkMode }) => {
       <footer className="text-gray-500 flex items-center justify-center py-6">
         <div className="flex flex-col items-center space-y-4">
           <div className="flex space-x-8">
-            <a href="https://www.linkedin.com/in/austin-y-huang/" className="hover:text-black cursor-pointer">
+            <a href="https://www.linkedin.com/in/austin-y-huang/" className="hover:text-black dark:text-gray-300 dark:hover:text-white cursor-pointer">
               <Linkedin size={24} />
             </a>
-            <a href="https://github.com/austinhuarng" className="hover:text-black cursor-pointer">
+            <a href="https://github.com/austinhuarng" className="hover:text-black dark:text-gray-300 dark:hover:text-white cursor-pointer">
               <Github size={24} />
             </a>
-            <a href="mailto:austinhuang11@gmail.com" className="hover:text-black cursor-pointer">
+            <a href="mailto:austinhuang11@gmail.com" className="hover:text-black dark:text-gray-300 dark:hover:text-white cursor-pointer">
               <Mail size={24} />
             </a>
           </div>
           <div className="flex space-x-4">
-            <a href="/#/projects" className="text-gray-500 hover:text-black hover:underline">
+            <a
+              href="/#/projects"
+              className="text-gray-500 dark:text-gray-300 hover:text-black dark:hover:text-white hover:underline"
+            >
               /projects
             </a>
             <span className="mx-4">|</span>
